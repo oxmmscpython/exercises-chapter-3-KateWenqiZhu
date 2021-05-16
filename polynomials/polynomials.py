@@ -103,3 +103,12 @@ class Polynomial:
                 
             return val
 
+    def dx(self): 
+        if len(self.coefficients)==1:
+            return Polynomial((0,))
+        else:
+            dcoefficients=tuple(self.coefficients[x]*(x) for x in range(1,len(self.coefficients)))
+            return Polynomial(dcoefficients)
+
+def derivative(self): 
+    return self.dx()
